@@ -1,0 +1,35 @@
+﻿@model RestaurantManagement.Models.Table
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Delete Table</h2>
+
+    <h3 class="text-center text-danger">Are you sure you want to delete this table?</h3>
+
+    <div class="shadow p-4 bg-light rounded">
+        <dl class="row">
+            <!-- Table Number -->
+            <dt class="col-sm-4 fw-bold">
+                Table Number
+            </dt>
+            <dd class="col-sm-8">
+                @Model.TableNumber
+            </dd>
+
+            <!-- Table Capacity -->
+            <dt class="col-sm-4 fw-bold">
+                Table Capacity
+            </dt>
+            <dd class="col-sm-8">
+                @Model.TableCapacity
+            </dd>
+        </dl>
+
+        <!-- Action Buttons -->
+        <form asp-action="Delete" method="post" class="text-center">
+            <input type="hidden" asp-for="TableID" />
+            <button type="submit" class="btn btn-danger me-2">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+
